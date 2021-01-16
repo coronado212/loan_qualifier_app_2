@@ -99,6 +99,7 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
     print(f"Found {len(bank_data_filtered)} qualifying loans")
 
+
     return bank_data_filtered
 
 
@@ -109,15 +110,15 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # Complete the usability dialog for savings the CSV Files.
-    csvpath = Path('qualifying_loans.csv')
-    save_csv(csvpath, qualifying_loans)
+    csvpath = Path('./data/qualifying_loans.csv')
+    save_csv(csvpath, qualifying_loans) 
 
     answer = questionary.text("Would you like to save this list of qualifying loans?").ask()
     message = "Thank you, best of luck!"
 
     if answer == 'yes':
         message = questionary.text("Enter output file path:").ask()
-    
+        save_csv(Path(message), qualifying_loans)
     print(message)
 
 def run():

@@ -29,6 +29,7 @@ def load_csv(csvpath):
             data.append(row)
     return data
 
+
 def save_csv(csvpath, data, header=None):
     """Saves the CSV file from path provided.
 
@@ -43,3 +44,4 @@ def save_csv(csvpath, data, header=None):
         if header:
             csvwriter.writerow(header)
         csvwriter.writerows(data)
+
