@@ -14,7 +14,7 @@ from qualifier.filters import loan_to_value
 from qualifier.filters import max_loan_size
 
 def test_save_csv():
-    csvpath = Path('../data/qualifying_loans.csv')  #data/qualifying_loans.csv
+    csvpath = Path('../data/qualifying_loans.csv')
     bank_data = []
     header = []
     fileio.save_csv(csvpath, bank_data, header)
@@ -27,7 +27,7 @@ def test_calculate_loan_to_value_ratio():
     assert calculators.calculate_loan_to_value_ratio(210000, 250000) == 0.84
 
 def test_filters():
-    csvpath = Path('../data/daily_rate_sheet.csv') #data/daily_rate_sheet.csv
+    csvpath = Path('../data/daily_rate_sheet.csv')
     bank_data = fileio.load_csv(csvpath)
     current_credit_score = 750
     debt = 1500
